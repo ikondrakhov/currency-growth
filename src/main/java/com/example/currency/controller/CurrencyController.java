@@ -39,7 +39,7 @@ public class CurrencyController {
                 env.getProperty("GIF_API_KEY"));
     }
 
-    @GetMapping("/currencyGrowth")
+    @GetMapping("/currency-growth")
     @ResponseBody
     public String currency(
             @RequestParam(value="currencyCode", defaultValue = "USD")
