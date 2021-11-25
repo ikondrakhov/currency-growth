@@ -1,36 +1,15 @@
-Результат прошу присылать на почту:
-DVPolyakova@alfabank.ru + ссылку на резюме на hh.ru
+# Currency Growth Application
 
-## Описание
-Создать сервис, который обращается к сервису курсов валют, 
-и отображает gif: 
-- если курс по отношению к USD за сегодня стал выше 
-вчерашнего, то отдаем рандомную отсюда 
-https://giphy.com/search/rich 
-- если ниже - отсюда https://giphy.com/search/broke
-## Ссылки 
-- REST API курсов валют - 
-https://docs.openexchangerates.org/
-- REST API гифок - 
-https://developers.giphy.com/docs/api#quick-start-guide
+## Prerequisites
 
-## Must Have
-- [x] Сервис на Spring Boot 2 + Java / Kotlin
-- [x] Запросы приходят на HTTP endpoint 
-(должен быть написан в соответствии с rest conventions),
-туда передается код валюты по отношению с которой
-сравнивается USD
-- [X] Для взаимодействия с внешними сервисами 
-используется Feign
-- [ ] Все параметры (валюта по отношению к которой 
-смотрится курс, адреса внешних сервисов и т.д.)
-вынесены в настройки
-- [x] На сервис написаны тесты (для мока внешних сервисов
-можно использовать @mockbean или WireMock) 
-- [x] Для сборки должен использоваться Gradle
-- [ ] Результатом выполнения должен быть репо на GitHub 
-с инструкцией по запуску
+- Create dev.properties in src/main/resources folder
+- Add GIF_API_KEY variables with [gif api](https://developers.giphy.com/docs/api#quick-start-guide) key
+- Create CURRENCY_API_KEY variable with [open exchange api](https://docs.openexchangerates.org) key
 
-## Nice to Have 
-- [ ] Сборка и запуск Docker контейнера с этим сервисом
-Срок выполнения задания - 1 неделя) удачи!
+dev.properties example:
+GIF_API_KEY=keytogiphyapi
+CURRENCY_API_KEY=keytoopenexchangeratesapi
+
+## How to launch
+
+just use gradle lol
