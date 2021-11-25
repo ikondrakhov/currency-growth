@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Currency Growth Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Currency growth app endpoints</h1>
+<h2>/currency-growth?currencyCode={currency}</h2>
+<p>If {currency} increased compared to yesterday then random rich gif is returned
+    http://api.giphy.com/v1/gifs/random?tag=rich</p>
+<p>If {currency} decreased compared to yesterday then random broke gif is returned
+    http://api.giphy.com/v1/gifs/random?tag=broke</p>
+<p>If {currency} entered does not exist then error page is returned</p>
+</body>
+</html>

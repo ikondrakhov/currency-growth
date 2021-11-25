@@ -3,13 +3,16 @@ package com.example.currency;
 import com.example.currency.currency.CurrencyApi;
 import com.example.currency.gif.*;
 import com.example.currency.currency.Rates;
+import com.example.currency.services.CurrencyGrowthService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -22,13 +25,16 @@ import java.util.Map;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @WebMvcTest
 @RunWith(SpringRunner.class)
-class CurrencyApplicationTests {
+class CurrencyApplicationTest {
 
 	@Autowired
 	private MockMvc mockMvc;
+	@Autowired
+	private CurrencyGrowthService currencyGrowthService;
 	@MockBean
 	private GifApi gifApi;
 	@MockBean
@@ -37,6 +43,14 @@ class CurrencyApplicationTests {
 	private Date today, yesterday;
 	private Rates testRatesBig, testRatesSmall;
 	private Gif testGif;
+
+	@TestConfiguration
+	static class CurrencyApplicationTestConfiguration {
+		@Bean
+		public CurrencyGrowthService currencyGrowthService() {
+			return new CurrencyGrowthService();
+		}
+	}
 
 	@BeforeEach
 	public void setup() {
@@ -58,7 +72,7 @@ class CurrencyApplicationTests {
 		Image image = new Image("URL");
 		Map<String, Image> images = new HashMap<>();
 		images.put("original", image);
-		GifData gifData = new GifData("embedUrl", images);
+		GifData gifData = new GifData(images);
 		this.testGif = new Gif(gifData);
 
 		Mockito.when(gifApi.getRichGif()).thenReturn(testGif);
@@ -93,7 +107,7 @@ class CurrencyApplicationTests {
 		Mockito.when(currencyApi.getRatesByDate(yesterday)).thenReturn(testRatesBig);
 
 		mockMvc.perform(MockMvcRequestBuilders.get("/currency-growth?currencyCode=AAA"))
-						.andExpect(content().string("Currency AAA does not exist."));
+						.andExpect(view().name("error"));
 
 		verify(gifApi, times(0)).getRichGif();
 		verify(gifApi, times(0)).getBrokeGif();
