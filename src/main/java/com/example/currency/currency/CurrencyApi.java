@@ -3,11 +3,12 @@ package com.example.currency.currency;
 import com.example.currency.clients.CurrencyClient;
 import feign.Feign;
 import feign.gson.GsonDecoder;
+import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class CurrencyApi {
+public class CurrencyApi{
     private CurrencyClient currencyClient;
     private String base;
     private String apiKey;

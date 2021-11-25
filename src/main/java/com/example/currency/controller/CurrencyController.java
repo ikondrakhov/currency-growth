@@ -3,19 +3,13 @@ package com.example.currency.controller;
 import com.example.currency.currency.CurrencyApi;
 import com.example.currency.exceptions.NoSuchCurrencyException;
 import com.example.currency.currency.Rates;
-import com.example.currency.clients.GifClient;
-import com.example.currency.gif.Gif;
 import com.example.currency.gif.GifApi;
-import feign.Feign;
-import feign.gson.GsonDecoder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.PostConstruct;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -23,25 +17,14 @@ import java.util.Date;
 public class CurrencyController {
 
     @Autowired
-    Environment env;
-
     private CurrencyApi currencyApi;
-    private GifApi gifApi;
 
-    @PostConstruct
-    public void postConstruct() {
-        this.currencyApi = new CurrencyApi(
-                env.getProperty("exchange.rates.url"),
-                env.getProperty("base.currency"),
-                env.getProperty("CURRENCY_API_KEY"));
-        this.gifApi = new GifApi(
-                env.getProperty("giphy.api.url"),
-                env.getProperty("GIF_API_KEY"));
-    }
+    @Autowired
+    private GifApi gifApi;
 
     @GetMapping("/currency-growth")
     @ResponseBody
-    public String currency(
+    public String currencyGrowth(
             @RequestParam(value="currencyCode", defaultValue = "USD")
                     String currencyCode
     ) {
