@@ -19,10 +19,7 @@ public class CurrencyGrowthService {
     @Autowired
     private GifApi gifApi;
 
-    public String getGif(String currencyCode) throws NoSuchCurrencyException{
-        Float currencyDifference;
-        currencyDifference = this.getCurrencyDifference(currencyCode);
-
+    public String getGifUrl(Float currencyDifference) throws NoSuchCurrencyException {
         String gifUrl;
         if(currencyDifference >= 0) {
             gifUrl = gifApi.getRichGif().getData().getImage("original").getWebpUrl();
@@ -32,7 +29,7 @@ public class CurrencyGrowthService {
         return gifUrl;
     }
 
-    private Float getCurrencyDifference(String currencyCode) throws NoSuchCurrencyException {
+    public Float getCurrencyDifference(String currencyCode) throws NoSuchCurrencyException {
         Rates todayRates = this.currencyApi.getLatestRates();
 
         Calendar calendar = Calendar.getInstance();

@@ -21,7 +21,8 @@ public class CurrencyController {
     ) {
         String gifUrl;
         try {
-            gifUrl = this.currencyGrowthService.getGif(currencyCode);
+            Float difference = this.currencyGrowthService.getCurrencyDifference(currencyCode);
+            gifUrl = this.currencyGrowthService.getGifUrl(difference);
         } catch (NoSuchCurrencyException e) {
             model.addAttribute("errorMessage", e.getMessage());
             return "error";
