@@ -12,4 +12,8 @@ CURRENCY_API_KEY=keytoopenexchangeratesapi
 
 ## How to launch
 ___
-just use gradle lol
+App uses gradle
+
+./gradlew tasks - to list tasks
+./gradlew bootRun - to run as Spring Boot application
+./gradlew bootJar - to build executable jar (generated jar will be in build/libs/)
