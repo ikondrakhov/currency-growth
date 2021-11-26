@@ -12,8 +12,14 @@ CURRENCY_API_KEY=keytoopenexchangeratesapi
 
 ## How to launch
 ___
-App uses gradle
+###App uses gradle
 
 ./gradlew tasks - to list tasks \
 ./gradlew bootRun - to run as Spring Boot application \
 ./gradlew bootJar - to build executable jar (generated jar will be in build/libs/)
+
+### Docker build
+
+1. ./gradlew bootJar
+2. docker build -t currency-app:0.0.1 .
+3. docker run -d -p 8080:8080 -t currency-app:0.0.1
