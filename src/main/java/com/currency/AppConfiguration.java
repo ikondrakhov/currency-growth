@@ -1,7 +1,7 @@
-package com.example.currency;
+package com.currency;
 
-import com.example.currency.currency.CurrencyApi;
-import com.example.currency.gif.GifApi;
+import com.currency.currency.CurrencyApi;
+import com.currency.gif.GifApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

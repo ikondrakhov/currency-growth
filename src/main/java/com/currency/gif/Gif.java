@@ -1,4 +1,4 @@
-package com.example.currency.gif;
+package com.currency.gif;
 
 public class Gif {
     private GifData data;

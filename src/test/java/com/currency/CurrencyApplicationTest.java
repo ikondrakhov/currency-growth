@@ -1,9 +1,12 @@
-package com.example.currency;
+package com.currency;
 
-import com.example.currency.currency.CurrencyApi;
-import com.example.currency.gif.*;
-import com.example.currency.currency.Rates;
-import com.example.currency.services.CurrencyGrowthService;
+import com.currency.gif.Gif;
+import com.currency.gif.GifApi;
+import com.currency.gif.GifData;
+import com.currency.gif.Image;
+import com.currency.services.CurrencyGrowthService;
+import com.currency.currency.CurrencyApi;
+import com.currency.currency.Rates;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

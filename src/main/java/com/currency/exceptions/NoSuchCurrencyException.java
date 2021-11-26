@@ -1,4 +1,4 @@
-package com.example.currency.exceptions;
+package com.currency.exceptions;
 
 public class NoSuchCurrencyException extends Exception {
     public NoSuchCurrencyException(String errorMessage) {

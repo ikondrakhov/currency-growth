@@ -1,4 +1,4 @@
-package com.example.currency.gif;
+package com.currency.gif;
 
 public class Image {
     private String webp;

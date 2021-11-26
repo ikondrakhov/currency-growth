@@ -1,10 +1,8 @@
-package com.example.currency.gif;
+package com.currency.gif;
 
-import com.example.currency.clients.GifClient;
+import com.currency.clients.GifClient;
 import feign.Feign;
 import feign.gson.GsonDecoder;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 public class GifApi {
     private GifClient gifClient;

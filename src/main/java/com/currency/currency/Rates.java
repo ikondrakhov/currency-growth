@@ -1,4 +1,4 @@
-package com.example.currency.currency;
+package com.currency.currency;
 
 import java.util.Map;
 

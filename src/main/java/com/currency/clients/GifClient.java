@@ -1,6 +1,6 @@
-package com.example.currency.clients;
+package com.currency.clients;
 
-import com.example.currency.gif.Gif;
+import com.currency.gif.Gif;
 import feign.Param;
 import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;

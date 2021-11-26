@@ -1,7 +1,7 @@
-package com.example.currency.controller;
+package com.currency.controller;
 
-import com.example.currency.exceptions.NoSuchCurrencyException;
-import com.example.currency.services.CurrencyGrowthService;
+import com.currency.services.CurrencyGrowthService;
+import com.currency.exceptions.NoSuchCurrencyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

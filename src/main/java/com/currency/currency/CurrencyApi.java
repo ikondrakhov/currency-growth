@@ -1,9 +1,8 @@
-package com.example.currency.currency;
+package com.currency.currency;
 
-import com.example.currency.clients.CurrencyClient;
+import com.currency.clients.CurrencyClient;
 import feign.Feign;
 import feign.gson.GsonDecoder;
-import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
