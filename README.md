@@ -10,9 +10,14 @@ dev.properties example: \
 GIF_API_KEY=keytogiphyapi \
 CURRENCY_API_KEY=keytoopenexchangeratesapi
 
+- Docker or Java 11
+
 ## How to launch
 ___
-###App uses gradle
+
+on Windows instead of ./ use .\
+
+### App uses gradle
 
 ./gradlew tasks - to list tasks \
 ./gradlew bootRun - to run as Spring Boot application \
