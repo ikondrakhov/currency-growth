@@ -1,6 +1,7 @@
-package com.currency.currency;
+package com.currency.api;
 
 import com.currency.clients.CurrencyClient;
+import com.currency.currency.Rates;
 import feign.Feign;
 import feign.gson.GsonDecoder;
 

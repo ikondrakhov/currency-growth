@@ -1,11 +1,11 @@
 package com.currency;
 
 import com.currency.gif.Gif;
-import com.currency.gif.GifApi;
+import com.currency.api.GifApi;
 import com.currency.gif.GifData;
 import com.currency.gif.Image;
 import com.currency.services.CurrencyGrowthService;
-import com.currency.currency.CurrencyApi;
+import com.currency.api.CurrencyApi;
 import com.currency.currency.Rates;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

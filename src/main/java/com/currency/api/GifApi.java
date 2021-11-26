@@ -1,6 +1,7 @@
-package com.currency.gif;
+package com.currency.api;
 
 import com.currency.clients.GifClient;
+import com.currency.gif.Gif;
 import feign.Feign;
 import feign.gson.GsonDecoder;
 

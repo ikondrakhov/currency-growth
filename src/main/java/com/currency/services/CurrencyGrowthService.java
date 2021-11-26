@@ -1,9 +1,9 @@
 package com.currency.services;
 
-import com.currency.currency.CurrencyApi;
+import com.currency.api.CurrencyApi;
 import com.currency.currency.Rates;
 import com.currency.exceptions.NoSuchCurrencyException;
-import com.currency.gif.GifApi;
+import com.currency.api.GifApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
