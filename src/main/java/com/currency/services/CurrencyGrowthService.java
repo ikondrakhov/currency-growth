@@ -21,9 +21,9 @@ public class CurrencyGrowthService {
     public String getGifUrl(Float currencyDifference) throws NoSuchCurrencyException {
         String gifUrl;
         if(currencyDifference >= 0) {
-            gifUrl = gifApi.getRichGif().getData().getImage("original").getWebpUrl();
+            gifUrl = gifApi.getRichGif().getImageUrl("original");
         } else {
-            gifUrl = gifApi.getBrokeGif().getData().getImage("original").getWebpUrl();
+            gifUrl = gifApi.getBrokeGif().getImageUrl("original");
         }
         return gifUrl;
     }

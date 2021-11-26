@@ -10,4 +10,8 @@ public class Gif {
     public GifData getData() {
         return data;
     }
+
+    public String getImageUrl(String size) {
+        return this.data.getImage(size).getWebpUrl();
+    }
 }
