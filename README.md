@@ -3,7 +3,7 @@ ___
 
 ## Endpoints
 
-/ - short documentation
+/ - short documentation \
 /currency-growth?currencyCode=USD - USD growth, returns html page with gif
 
 ## Prerequisites
