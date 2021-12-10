@@ -1,5 +1,11 @@
 # Currency Growth Application
 ___
+
+## Endpoints
+
+/ - short documentation
+/currency-growth?currencyCode=USD - USD growth, returns html page with gif
+
 ## Prerequisites
 ___
 1. Create dev.properties in src/main/resources folder
